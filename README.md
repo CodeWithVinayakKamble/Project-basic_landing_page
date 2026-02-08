@@ -1,4 +1,3 @@
-- Through the development of this project -
 1.I gained hands-on experience with:CSS Architecture: Implementing a global design system using :root variables for colors and typography to ensure brand consistency.
 
 2.Modern Layouts: Mastering Flexbox for complex alignments and utilizing Viewport Height ($100vh$) to create impactful, full-screen sections.
