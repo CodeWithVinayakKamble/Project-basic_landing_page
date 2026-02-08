@@ -1,0 +1,414 @@
+/* Root Variables */
+:root {
+    /* Background Colors */
+    --dark-bg: #1F2937;
+    /* Hero and Footer */
+    --quote-bg: #E5E7EB;
+    /* Quote/Subtitle area */
+    --button-color: #3882F6;
+    /* Call to Action */
+
+    /* Text Colors */
+    --main-text: #F9FAF8;
+    /* White-ish text for dark backgrounds */
+    --secondary-text: #E5E7EB;
+    /* Lower contrast text */
+    --dark-text: #1F2937;
+    /* For light sections like Menu and Contact */
+
+
+    /* Font Sizes (Converted to rem) */
+    --fs-hero-main: 3rem;
+    /* 48px */
+    --fs-section-title: 2.25rem;
+    /* 36px */
+    --fs-logo: 1.5rem;
+    /* 24px */
+    --fs-body: 1.125rem;
+
+    /* Font Weights */
+    --weight-heavy: 900;
+    --weight-light: 300;
+    --weight-regular: 400;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    /* Use Roboto as per your style guide */
+    font-family: 'Roboto', sans-serif;
+    color: var(--dark-text);
+}
+
+/* Let's update your Header/Hero background immediately */
+header,
+#hero,
+.site-footer {
+    background-color: var(--dark-bg);
+}
+
+
+/* header - Navbar */
+header {
+    padding: 1rem 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+
+    & .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 75rem;
+        /* 1200px / 16 = 75rem */
+        margin: 0 auto;
+        padding: 0 1.25rem;
+        /* 20px */
+    }
+
+    & .logo a {
+        font-size: var(--fs-logo);
+        color: var(--main-text);
+        font-weight: var(--weight-heavy);
+        text-decoration: none;
+    }
+
+    & .nav-link-list {
+        display: flex;
+        list-style: none;
+        gap: 2rem;
+        /* 32px */
+    }
+
+    & .nav-link-list a {
+        font-size: var(--fs-body);
+        color: var(--secondary-text);
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+}
+
+
+/* Section viewPort setting */
+section {
+    /* 100vh means 100% of the Viewport Height */
+    min-height: 100vh;
+
+    /* This ensures content doesn't touch the very top/bottom */
+    padding: 100px 2rem;
+
+    /* Keep Flexbox active to center your content inside that big height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* scroll-margin-top: 20px; */
+    /* Adjust this to the height of your navbar */
+}
+
+/* Main - Hero */
+.hero {
+    /* min-height: 100vh; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 4rem;
+    /* To prevent the fixed navbar from covering text */
+
+    & .hero-content-container {
+        display: flex;
+        max-width: 75rem;
+        /* 1200px */
+        margin: 0 auto;
+        padding: 0 2rem;
+        gap: 4rem;
+        /* Space between text and image */
+        align-items: center;
+        /* border: 5px solid white; */
+    }
+
+    & .hero-left-content {
+        flex: 1;
+        /* Takes up half the container */
+    }
+
+    & .hero-left-content h1 {
+        font-size: var(--fs-hero-main);
+        /* 3rem / 48px */
+        color: var(--main-text);
+        /* #F9FAF8 */
+        font-weight: var(--weight-heavy);
+        /* 900 */
+        line-height: 1.1;
+        margin-bottom: 1.5rem;
+    }
+
+    & .hero-subtext {
+        font-size: var(--fs-body);
+        /* 1.125rem / 18px */
+        color: var(--secondary-text);
+        /* #E5E7EB - lower contrast */
+        max-width: 35rem;
+        /* Keeps text from stretching too wide */
+    }
+
+    & .hero-right-content {
+        flex: 1;
+        /* Takes up the other half */
+        display: flex;
+        justify-content: center;
+    }
+
+    & .hero-right-content img {
+        width: 100%;
+        max-width: 30rem;
+        /* Prevents it from getting too massive */
+        height: auto;
+        border-radius: 0.5rem;
+        /* Slight rounding for a modern look */
+        box-shadow: 0 4px 10px rgba(233, 215, 215, 0.998);
+    }
+
+    & .hero-right-content figcaption {
+        color: var(--secondary-text);
+        font-size: 0.8rem;
+        margin-top: 0.5rem;
+        font-style: italic;
+        text-align: center;
+    }
+}
+
+/* Main - Menu */
+.menu {
+    background-color: white;
+    padding: 5rem 2rem;
+    /* Lots of breathing room */
+    text-align: center;
+
+    & .section-title {
+        font-size: var(--fs-section-title);
+        /* 2.25rem / 36px */
+        color: var(--dark-text);
+        /* #1F2937 */
+        font-weight: var(--weight-heavy);
+        /* 900 */
+        margin-bottom: 1rem;
+    }
+
+    & .section-subtitle {
+        font-size: 1.125rem;
+        color: #4b5563;
+        /* Subtle gray */
+        max-width: 50rem;
+        margin: 0 auto 4rem auto;
+        /* Centers the text and adds space below */
+    }
+
+    & .signature-blends {
+        display: flex;
+        justify-content: center;
+        gap: 3.25rem;
+        /* Large gap for that "open" feeling */
+        flex-wrap: wrap;
+        margin-top: 3rem;
+    }
+
+    & .signature {
+        flex: 1;
+        max-width: 18rem;
+        /* Keeps cards consistent */
+        text-align: center;
+    }
+
+    & .signature img {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1 / 1;
+        /* Makes them perfect squares */
+        object-fit: cover;
+        /* Crops image to fit the square without stretching */
+        border: 0.25rem solid var(--button-color);
+        /* #3882F6 border */
+        border-radius: 1rem;
+        /* Rounded corners for that modern "Odin" look */
+        transition: transform 0.3s ease;
+    }
+
+    & .signature img:hover {
+        transform: translateY(-0.5rem);
+        /* Subtle lift when hovering over a smoothie */
+    }
+
+    & .signature figcaption {
+        margin-top: 1rem;
+        font-size: 1.125rem;
+        /* 18px */
+        color: var(--dark-text);
+        /* #1F2937 */
+        line-height: 1.4;
+        font-weight: var(--weight-regular);
+    }
+
+    /* Recipe navigation */
+    & .recipe-link {
+        display: block;
+        /* Puts the link on its own line */
+        margin-top: 0.75rem;
+        /* Space between the name and the link */
+    }
+
+    .recipe-link a {
+        color: var(--button-color);
+        /* #3882F6 from your root */
+        text-decoration: none;
+        font-size: 1rem;
+        font-weight: 600;
+        border: 1px solid var(--button-color);
+        padding: 0.4em 1.2em;
+        border-radius: 0.4rem;
+        transition: all 0.3s ease;
+    }
+
+    .recipe-link a:hover {
+        background-color: var(--button-color);
+        color: #ffffff;
+        /* Turns white when you hover */
+    }
+}
+
+/* Main - Contact Us */
+#contact {
+    background-color: var(--quote-bg);
+    /* #E5E7EB */
+    padding: 5rem 2rem;
+    text-align: center;
+
+    & .contact-content-container {
+        max-width: 40rem;
+        /* Keeps the form from getting too wide and scary */
+        margin: 0 auto;
+    }
+
+    & .section-title {
+        font-size: var(--fs-section-title);
+        /* 2.25rem / 36px */
+        color: var(--dark-text);
+        /* #1F2937 */
+        margin-bottom: 1rem;
+    }
+
+    & .section-subtitle {
+        font-weight: 700;
+        color: var(--button-color);
+        /* Using that blue #3882F6 to highlight "Bulk Orders" */
+        margin-bottom: 2rem;
+    }
+
+    & .conatct-form {
+        background: #ffffff;
+        padding: 2.5rem;
+        border-radius: 1rem;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        /* Adds a soft professional shadow */
+        text-align: left;
+    }
+
+    & .form-group {
+        margin-bottom: 1.5rem;
+    }
+
+    & .form-group label {
+        display: block;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+        color: var(--dark-text);
+    }
+
+    & .form-group input,
+    .form-group textarea {
+        width: 100%;
+        padding: 0.8rem;
+        border: 1px solid #d1d5db;
+        border-radius: 0.5rem;
+        font-size: 1rem;
+        font-family: inherit;
+        /* Keeps that "Roboto" font inside inputs */
+    }
+
+    & .form-group textarea {
+        resize: vertical;
+        min-height: 20px;
+        max-height: 100px;
+    }
+
+    & .form-group input:focus,
+    .form-group textarea:focus {
+        outline: none;
+        border-color: var(--button-color);
+        box-shadow: 0 0 0 3px rgba(56, 130, 246, 0.2);
+    }
+
+    & .submit-btn {
+        background-color: var(--button-color);
+        /* #3882F6 */
+        color: #ffffff;
+        width: 100%;
+        padding: 1rem;
+        border: none;
+        border-radius: 0.5rem;
+        font-size: 1.125rem;
+        font-weight: 700;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    & .submit-btn:hover {
+        background-color: #2563eb;
+        transform: translateY(-2px);
+    }
+}
+
+/* Footer */
+.site-footer {
+    background-color: var(--dark-bg);
+    /* #1F2937 from your root */
+    color: var(--secondary-text);
+    /* #E5E7EB */
+    padding: 2rem 2rem;
+    width: 100%;
+
+    & .footer-content {
+        display: flex;
+        justify-content: space-between;
+        /* Copyright left, Credit right */
+        align-items: center;
+        max-width: 75rem;
+        /* 1200px */
+        margin: 0 auto;
+        font-size: 1rem;
+    }
+
+    & .dev-credit a {
+        color: var(--main-text);
+        /* #F9FAF8 */
+        text-decoration: none;
+        font-weight: var(--weight-heavy);
+        /* 900 */
+        border-bottom: 1px solid transparent;
+        transition: border-bottom 0.3s ease;
+    }
+
+    & .dev-credit a:hover {
+        border-bottom: 1px solid var(--main-text);
+        color: var(--button-color);
+    }
+}
