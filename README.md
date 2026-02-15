@@ -1,4 +1,4 @@
-Project Preview : https://codewithvinayakkamble.github.io/basic-landing-page/
+Project Preview : https://codewithvinayakkamble.github.io/Project-basic_landing_page/
 
 1.I gained hands-on experience with:CSS Architecture: Implementing a global design system using :root variables for colors and typography to ensure brand consistency.
 
